@@ -89,33 +89,4 @@ public class Venta {
             this.precioTotal = precioUnitario.multiply(new BigDecimal(cantidad));
         }
     }
-
-    public void convertirAEur(BigDecimal tasaCambio) {
-        if (tasaCambio == null || tasaCambio.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("Tasa de cambio inválida");
-        }
-
-        if (this.precioTotal != null) {
-            this.precioTotalEur = this.precioTotal.multiply(tasaCambio);
-        }
-    }
-
-    public String obtenerNombreProducto() {
-        return (producto != null && producto.getNombre() != null)
-                ? producto.getNombre()
-                : "N/A";
-    }
-
-    public String obtenerCategoriaProducto() {
-        return (producto != null && producto.getCategoria() != null)
-                ? producto.getCategoria()
-                : "N/A";
-    }
-
-    public boolean esValida() {
-        return numeroFactura != null && !numeroFactura.isEmpty()
-                && producto != null
-                && cantidad != null && cantidad > 0
-                && precioUnitario != null && precioUnitario.compareTo(BigDecimal.ZERO) > 0;
-    }
 }

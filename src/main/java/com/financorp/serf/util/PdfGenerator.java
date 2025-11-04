@@ -123,7 +123,6 @@ public class PdfGenerator {
         int columnas = datos.get(0).length;
         Table table = new Table(columnas);
 
-        // ✅ setWidthPercent() fue reemplazado por setWidth(UnitValue.createPercentValue(x))
         table.setWidth(com.itextpdf.layout.properties.UnitValue.createPercentValue(100));
 
         for (String[] fila : datos) {

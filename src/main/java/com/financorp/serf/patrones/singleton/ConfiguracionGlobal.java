@@ -39,7 +39,6 @@ public class ConfiguracionGlobal {
         tasasCambio.put("CNY", tasaCnyEur);  // Yuan chino a EUR
         tasasCambio.put("PEN", tasaPenEur);  // Sol peruano a EUR
         tasasCambio.put("USD", tasaUsdEur);  // Dólar americano a EUR
-        tasasCambio.put("EUR", BigDecimal.ONE); // EUR a EUR (tasa 1:1)
     }
 
     public static ConfiguracionGlobal obtenerInstancia() {
@@ -109,7 +108,7 @@ public class ConfiguracionGlobal {
     }
 
     public Map<String, BigDecimal> obtenerTodasLasTasas() {
-        return new HashMap<>(tasasCambio); // Retornar copia para evitar modificaciones externas
+        return new HashMap<>(tasasCambio);
     }
 
     public boolean esMonedaSoportada(String moneda) {
